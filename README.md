@@ -112,7 +112,7 @@ Once your app is running successfully on localhost, let's get it on the internet
 
 ```
 ngrok http 8000 --domain your-domain.ngrok-free.app
-ngrok http 8000 --domain big-ringtail-mostly.ngrok-free.app
+
 ```
 
 8. ngrok will display a URL where your localhost application is exposed to the internet (copy this URL for use with Meta).
@@ -241,9 +241,6 @@ When dealing with WhatsApp Business API and wanting to experiment without affect
 
 **Recommendation**: If this is for a more prolonged or professional purpose, using a virtual phone number service or purchasing a new SIM card for a dedicated device is advisable. For quick tests, a temporary number might suffice, but always be cautious about security and privacy. Remember that once a number is associated with WhatsApp Business API, it cannot be used with regular WhatsApp on a device unless you deactivate it from the Business API and reverify it on the device.
 
-## Datalumina
-
-This document is provided to you by Datalumina. We help data analysts, engineers, and scientists launch and scale a successful freelance business — $100k+ /year, fun projects, happy clients. If you want to learn more about what we do, you can visit our [website](https://www.datalumina.com/) and subscribe to our [newsletter](https://www.datalumina.com/newsletter). Feel free to share this document with your data friends and colleagues.
 
 ## Tutorials
 
