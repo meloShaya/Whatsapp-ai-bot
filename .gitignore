@@ -89,3 +89,9 @@ target/
 
 # Exlcude the database file
 .db
+
+# Custom Knowledge Base / Prompt Files (to keep proprietary prompts private)
+data/gemini_system_prompt.txt
+# If you have similar files for other services, add them too, e.g.:
+# data/deepseek_system_prompt.txt
+# data/openai_instructions.txt

@@ -9,6 +9,7 @@ import asyncio
 # Load environment variables
 # --------------------------------------------------------------
 
+
 load_dotenv()
 ACCESS_TOKEN = os.getenv("ACCESS_TOKEN")
 RECIPIENT_WAID = os.getenv("RECIPIENT_WAID")
@@ -84,7 +85,7 @@ def send_message(data):
 
 
 data = get_text_message_input(
-    recipient=RECIPIENT_WAID, text="Hello, this is a test message."
+    recipient=RECIPIENT_WAID, text="Hello Goodness, this is a test msg from melo shaya"
 )
 
 response = send_message(data)

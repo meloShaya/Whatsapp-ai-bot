@@ -1,3 +1,11 @@
 flask
 python-dotenv
-openai
+# openai # Commented out, as DeepSeek also uses it. If neither is needed, this can be removed.
+aiohttp
+requests
+google-generativeai
+PyMuPDF # For PDF parsing (import fitz)
+python-docx # For .docx Word documents
+# pandas # Commented out for Excel files
+# openpyxl # Commented out for .xlsx Excel files (often a pandas dependency)
+
