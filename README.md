@@ -208,14 +208,13 @@ Now that we have an end-to-end connection, we can make the bot more intelligent.
 
 **Original OpenAI Assistant Example (for reference):**
 
-The previous instructions for a cookie-cutter OpenAI Assistants API example were:
+The instructions for a cookie-cutter OpenAI Assistants API example were:
 
-1. Watch this video: [OpenAI Assistants Tutorial](https://www.youtube.com/watch?v=0h1ry-SqINc)
-2. Create your own assistant with OpenAI and update your `OPENAI_API_KEY` and `OPENAI_ASSISTANT_ID` in the environment variables.
-3. Provide your assistant with data and instructions
-4. Update [openai_service.py](https://github.com/daveebbelaar/python-whatsapp-bot/blob/main/app/services/openai_service.py) to your use case.
-5. Import `generate_response` into [whatsapp_utils.py](https://github.com/daveebbelaar/python-whatsapp-bot/blob/main/app/utils/)
-6. Update `process_whatsapp_message()` with the new `generate_response()` function.
+1. Create your own assistant with OpenAI and update your `OPENAI_API_KEY` and `OPENAI_ASSISTANT_ID` in the environment variables.
+2. Provide your assistant with data and instructions
+3. Update [openai_service.py](https://github.com/daveebbelaar/python-whatsapp-bot/blob/main/app/services/openai_service.py) to your use case.
+4. Import `generate_response` into [whatsapp_utils.py](https://github.com/daveebbelaar/python-whatsapp-bot/blob/main/app/utils/)
+5. Update `process_whatsapp_message()` with the new `generate_response()` function.
 
 These general principles are now handled by the multi-provider setup, with provider-specific configurations as noted above.
 
