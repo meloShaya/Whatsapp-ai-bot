@@ -28,8 +28,7 @@ This guide will walk you through the process of creating a WhatsApp bot using th
     -   [Step 5: Learn about the API and Build Your App](#step-5-learn-about-the-api-and-build-your-app)
     -   [Step 6: Integrate AI into the Application](#step-6-integrate-ai-into-the-application)
     -   [Step 7: Add a Phone Number](#step-7-add-a-phone-number)
-    -   [Datalumina](#datalumina)
-    -   [Tutorials](#tutorials)
+    
 
 ## Get Started
 
@@ -52,7 +51,7 @@ This guide will walk you through the process of creating a WhatsApp bot using th
 1. Obtain a 24-hour access token from the API access section.
 2. It will show an example of how to send messages using a `curl` command which can be send from the terminal or with a tool like Postman.
 3. Let's convert that into a [Python function with the request library](https://github.com/daveebbelaar/python-whatsapp-bot/blob/main/start/whatsapp_quickstart.py).
-4. Create a `.env` files based on `example.env` and update the required variables. [Video example here](https://www.youtube.com/watch?v=sOwG0bw0RNU).
+4. Create a `.env` files based on `example.env` and update the required variables. 
 5. You will receive a "Hello World" message (Expect a 60-120 second delay for the message).
 
 Creating an access that works longer then 24 hours
@@ -242,6 +241,4 @@ When dealing with WhatsApp Business API and wanting to experiment without affect
 **Recommendation**: If this is for a more prolonged or professional purpose, using a virtual phone number service or purchasing a new SIM card for a dedicated device is advisable. For quick tests, a temporary number might suffice, but always be cautious about security and privacy. Remember that once a number is associated with WhatsApp Business API, it cannot be used with regular WhatsApp on a device unless you deactivate it from the Business API and reverify it on the device.
 
 
-## Tutorials
 
-For video tutorials, visit the YouTube channel: [youtube.com/@daveebbelaar](youtube.com/@daveebbelaar)

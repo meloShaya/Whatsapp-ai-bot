@@ -2,6 +2,7 @@ import sys
 import os
 from dotenv import load_dotenv
 import logging
+from logging.handlers import WatchedFileHandler
 
 
 def load_configurations(app):
@@ -17,8 +18,27 @@ def load_configurations(app):
 
 
 def configure_logging():
-    logging.basicConfig(
-        level=logging.INFO,
-        format="%(asctime)s - %(name)s - %(levelname)s - %(message)s",
-        stream=sys.stdout,
-    )
+    log_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'logs')
+    if not os.path.exists(log_dir):
+        os.makedirs(log_dir)
+        
+    log_file_path = os.path.join(log_dir, 'app.log')
+
+    file_handler = WatchedFileHandler(log_file_path)
+    
+    formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+    file_handler.setFormatter(formatter)
+
+    root_logger = logging.getLogger('')
+    root_logger.setLevel(logging.INFO)
+    
+    for handler in root_logger.handlers[:]:
+        root_logger.removeHandler(handler)
+        
+    root_logger.addHandler(file_handler)
+    
+    stream_handler = logging.StreamHandler(sys.stdout)
+    stream_handler.setFormatter(formatter)
+    root_logger.addHandler(stream_handler)
+    
+    logging.info("Logging configured with WatchedFileHandler and StreamHandler.")

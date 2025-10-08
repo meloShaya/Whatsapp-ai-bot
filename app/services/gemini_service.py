@@ -43,7 +43,10 @@ KNOWLEDGE_BASE_CONTENT = load_knowledge_from_directory(GEMINI_KNOWLEDGE_BASE_DIR
 # Combine active system instructions with knowledge base preamble
 final_system_instructions = active_system_instructions
 if KNOWLEDGE_BASE_CONTENT:
-    knowledge_preamble = "\n\nUse the following information from the knowledge base to answer user questions. Prioritize this information above all other knowledge:\n---\n" + KNOWLEDGE_BASE_CONTENT + "\n---"
+    knowledge_preamble = "\n\n--- START OF KNOWLEDGE BASE CONTENT ---\n"
+    knowledge_preamble += KNOWLEDGE_BASE_CONTENT
+    knowledge_preamble += "\n--- END OF KNOWLEDGE BASE CONTENT ---\n\nAlways prioritize information from the KNOWLEDGE BASE CONTENT section above when answering user questions related to its topics. If the user's question cannot be answered using the KNOWLEDGE BASE CONTENT, say so politely."
+    
     if final_system_instructions:
         final_system_instructions += knowledge_preamble
     else:
@@ -119,14 +122,14 @@ def generate_ai_response(prompt: str, wa_id: str, name: str) -> str:
             return response_text
         else:
             logging.warning(f"Unexpected Gemini API response structure for {name} ({wa_id}): {response}")
-            return "Sorry, I couldn't process that response from Gemini."
+            return "Sorry, I couldn't process that response for you. Please try again after a moment."
     except Exception as e:
         logging.error(f"Error generating response from Gemini for {name} ({wa_id}): {e}")
         # It might be good to clear the history for this user if it's corrupted,
         # or handle specific errors like quota issues differently.
         # For now, just return a generic error.
         # store_gemini_thread(wa_id, []) # Optionally clear history on error
-        return f"Error communicating with Gemini: {e}"
+        return "I'm sorry, I seem to be having some technical trouble right now. Please try again in a moment."
 
 if __name__ == '__main__':
     # Example usage (for testing purposes)
